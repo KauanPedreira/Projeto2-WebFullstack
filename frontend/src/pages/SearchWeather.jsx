@@ -57,6 +57,11 @@ function SearchWeather() {
         </button>
       </form>
 
+      {cached && (
+        <p className="cache-info">
+          Resultado carregado do cache do backend.
+        </p>
+      )}
 
       {loading && <Loading />}
       {error && <ErrorMessage message={error} />}
