@@ -8,6 +8,7 @@ const rateLimit = require("express-rate-limit");
 
 const pool = require("./src/config/database");
 const authRoutes = require("./src/routes/auth.routes");
+const weatherRoutes = require("./src/routes/weather.routes");
 
 const app = express();
 
@@ -43,6 +44,7 @@ app.get("/", async (req, res) => {
 });
 
 app.use("/api/auth", authRoutes);
+app.use("/api/weather", weatherRoutes);
 
 const PORT = process.env.PORT || 3000;
 
